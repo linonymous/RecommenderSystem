@@ -1,2 +1,2 @@
 # RecommenderSystem
-Product Recommendation system uisng hybrid collaborative filtering
+Product Recommendation system using hybrid collaborative filtering

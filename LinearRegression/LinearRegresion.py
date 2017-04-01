@@ -70,8 +70,9 @@ class LinearRegression:
         self.learning_rate = learning_rate
         self.num_iterations = num_iterations
         self.points = points
-        [b, m] = self.gradient_descent_runner(self.points, self.initial_b, self.initial_m, self.learning_rate, self.num_iterations)
+        [b, m] = self.gradient_descent_runner(self.points, self.final_b, self.final_m, self.learning_rate, self.num_iterations)
         params = [b, m]
+        print params
         self.final_b = params[0]
         self.final_m = params[1]
         return [b, m]
@@ -80,15 +81,16 @@ class LinearRegression:
         
         m = self.final_m
         b = self.final_b
-        init_error = validation(self.initial_b, self.initial_m, points)
-        new_error = validation(b, m, points)
+        init_error = self.validation(self.initial_b, self.initial_m, points)
+        new_error = self.validation(b, m, points)
         valid = 100 - (new_error/init_error) * 100 
+        print "init " + str(init_error)
+        print "new " + str(new_error)
         if valid <= 0:
             return 0
         else:
             return valid
     
-    
+    def predict(self, inp):
         
-        
-        
+        return self.final_m * inp + self.final_b

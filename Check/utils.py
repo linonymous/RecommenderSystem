@@ -19,9 +19,10 @@ test_x = x_df.iloc[-4:]
 test_y = y_df.iloc[-4:]
 
 model = LinearRegression()
-model.train(train_x, train_y, 0.01, 1500)
+model.train(train_x, train_y, 0.3, 2000)
 print model.test(test_x, test_y)
 print model.predict(21)
+
 """
 points = points[1:]
 train_set = points[:16]

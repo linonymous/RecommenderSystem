@@ -22,7 +22,7 @@ class LinearRegression:
         # number of training examples
         m = len(y)
         # Calculate the cost with the given parameters
-        J = np.sum((X.dot(theta)-y) **2)/2/m
+        J = np.sum((X.dot(theta) - y) **2)/2/m
         return J
 
 
@@ -38,7 +38,7 @@ class LinearRegression:
             hypothesis = X.dot(theta)
             loss = hypothesis - y
             gradient = X.T.dot(loss)/m
-            theta = theta - learning_rate * gradient
+            theta = theta - learning_rate/m * gradient
             cost = self.cost_function(X, y, theta)
             cost_history[iteration] = cost
 
@@ -48,7 +48,7 @@ class LinearRegression:
         
         self.learning_rate = learning_rate
         self.iterations = iterations
-        X['intercept'] = pd.Series(1, index=X.index)
+        X.loc[:,'intercept'] = pd.Series(1, index=X.index)
         X = np.array(X)
         y = np.array(y).flatten()
         (t, c) = self.gradient_descent(X, y, self.theta, learning_rate, iterations)
@@ -60,7 +60,7 @@ class LinearRegression:
     
     def test(self, X, y):
         
-        X['intercept'] = pd.Series(1, index=X.index)
+        X.loc[:,'intercept'] = pd.Series(1, index=X.index)
         X = np.array(X)
         y = np.array(y).flatten()
         init_cost = self.cost_function(X, y, np.array([0, 0]))

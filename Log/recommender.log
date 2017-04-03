@@ -1,0 +1,10 @@
+2017-04-03 16:26:00,911 - root - INFO - RecommenderManager object created.
+2017-04-03 16:26:00,914 - root - INFO - reading csv file...
+2017-04-03 16:26:35,052 - root - INFO - RecommenderManager object created.
+2017-04-03 16:26:35,052 - root - INFO - RecommenderManager object created.
+2017-04-03 16:26:35,053 - root - INFO - reading csv file...
+2017-04-03 16:26:35,053 - root - INFO - reading csv file...
+2017-04-03 16:26:35,262 - root - INFO - 2nd time I am doing this
+2017-04-03 16:26:35,262 - root - INFO - 2nd time I am doing this
+2017-04-03 16:26:35,266 - root - INFO - 3rd time I am doing this
+2017-04-03 16:26:35,266 - root - INFO - 3rd time I am doing this

@@ -38,7 +38,7 @@ class LinearRegression:
             hypothesis = X.dot(theta)
             loss = hypothesis - y
             gradient = X.T.dot(loss)/m
-            theta = theta - learning_rate/m * gradient
+            theta = theta - learning_rate * gradient
             cost = self.cost_function(X, y, theta)
             cost_history[iteration] = cost
 

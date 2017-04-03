@@ -11,7 +11,9 @@ from LinearRegression.LinearRegression import LinearRegression
 data = pd.read_csv('book.csv')
 x_df = pd.DataFrame(data.x)
 y_df = pd.DataFrame(data.y)
-
+print data.head()
+print x_df
+print y_df
 train_x = x_df.iloc[:-4]
 train_y = y_df.iloc[:-4]
 

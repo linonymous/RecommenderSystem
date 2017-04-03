@@ -48,7 +48,8 @@ class LinearRegression:
         
         self.learning_rate = learning_rate
         self.iterations = iterations
-        X.loc[:,'intercept'] = pd.Series(1, index=X.index)
+        X['intercept'] = pd.Series(1, index=X.index)
+        #X.loc[:,'intercept'] = pd.Series(1, index=X.index)
         X = np.array(X)
         y = np.array(y).flatten()
         (t, c) = self.gradient_descent(X, y, self.theta, learning_rate, iterations)

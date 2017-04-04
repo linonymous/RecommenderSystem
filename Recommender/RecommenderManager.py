@@ -82,12 +82,12 @@ class RecommenderManager:
     
     # Gets recommendations for a person by using a weighted average
     # of every other user's rankings
-    def getRecommendations(self, prefs,person):
+    def getRecommendations(self, prefs, person):
         totals={}
         simSums={}
         for other in prefs:
             # don't compare me to myself
-            if other==person: continue
+            if other == person: continue
             sim = self.sim_pearson(prefs,person,other)
             # ignore scores of zero or lower
             if sim<=0: continue
@@ -124,7 +124,6 @@ if __name__ == '__main__':
     a = obj.transformPrefs(a)
     print a
     obj.sim_pearson(a, k, j)
-
     #print a
     print len(a)
     logging.info('2nd time I am doing this')

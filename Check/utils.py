@@ -14,17 +14,17 @@ y_df = pd.DataFrame(data.y)
 print data.head()
 print x_df
 print y_df
-train_x = x_df.iloc[:-4]
-train_y = y_df.iloc[:-4]
+train_x = x_df.iloc[:2]
+train_y = y_df.iloc[:2]
 
-test_x = x_df.iloc[-4:]
-test_y = y_df.iloc[-4:]
+test_x = x_df.iloc[:2]
+test_y = y_df.iloc[:2]
 
 model = LinearRegression()
-model.train(train_x, train_y, 0.3, 2000)
+model.train(train_x, train_y, 0.001, 2000)
 print model.test(test_x, test_y)
 print model.predict(21)
-
+print model.theta
 """
 points = points[1:]
 train_set = points[:16]

@@ -142,15 +142,16 @@ def transformPrefs(prefs):
     return result
 
 a = init()
-
+a = transformPrefs(a)
 #print getRecommendations(a, 1 )
 #a = transformPrefs(a)
 #print sim_pearson(a, 'Four Weddings and a Funeral (1994)', 'Birdcage, The (1996)' )
 
 #print a
 print len(a)
+
 #logging.info('2nd time I am doing this')
-"""
+
 
 user = {}
 def write(data):
@@ -174,10 +175,10 @@ for i in range (1, len(a)):
         user[i][j] = ls
     if i%50 == 0:
         write(user)
-with open('user-user-model.json') as data_file:    
+        
+with open('user-item-model.json') as data_file:    
     data = json.load(data_file)
-    print data['1']['664']
-"""
+
 """
 user[1] = {}
 model = train_model(a, 1, 2)
@@ -187,9 +188,9 @@ model = train_model(a, 1, 2)
 ls = []
 ls.append(model.theta[0])
 ls.append(model.theta[1])
-user[1][2] = ls"""
+user[1][2] = ls
 d = {}
-for i in range(1, 650):
+for i in range(1, len):
     b = getRecommendations(a, i)
     d[i] = []
     ite = {}
@@ -197,8 +198,8 @@ for i in range(1, 650):
         ite[item] = rating
     d[i].append(ite)
     print i
-with open('user-user.json', 'w') as f:
+with open('user-item.json', 'w') as f:
     json.dump(d, f)
 logging.info('2nd time I am doing this')
 #print sim_pearson(a, 1, 19)
-#print a
+#print a"""
